@@ -20,7 +20,7 @@
            <div class="flex justify-center items-center">
             <div class="flex justify-center items-center mx-5 bg-slate-300 rounded-xl py-2 px-4">
                 <img src="assets/checkbox.png" alt="">
-                <h1 class="mx-3">23</h1>
+                <h1 class="mx-3 font-bold text-xl">23</h1>
             </div>
 
             <img src="assets/theme-btn.png" alt="">
@@ -29,8 +29,63 @@
     </header>
 
     <!-- main section -->
-    <main>
+    <main class="flex justify-between mt-20">
+        <!-- main content section -->
+         <div class="w-[75%] bg-white min-h-screen rounded-xl">
 
+            <!-- cards container -->
+            <div class="grid grid-cols-3 gap-4 justify-center items-center mt-5 mx-2">
+
+                <!-- card 1 -->
+                <div class="flex justify-center gap-3 items-center bg-slate-300 rounded-xl py-5">
+
+                    <div class="bg-white p-3 rounded-full">
+                        <img src="assets/checkbox.png" alt="">
+                    </div>
+                    <div>
+                        <p>Task Assigned</p>
+                        <h1 class="font-bold text-2xl">05</h1>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class="flex justify-center gap-3 items-center rounded-xl py-5 bg-linear-to-r/srgb from-indigo-500 to-teal-400">
+
+                    <div class="bg-white p-3 rounded-full">
+                        <img class="w-8" src="assets/board.png" alt="">
+                    </div>
+                    <div class="text-white w-3/6 font-semibold">
+                        <p>Discover Something New Today!</p>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class="flex justify-center gap-3 items-center bg-slate-300 rounded-xl py-5">
+
+                    <div class="bg-white p-3 rounded-full">
+                        <img src="assets/calender.png" alt="">
+                    </div>
+                    <div>
+                        <p>Wed ,</p>
+                        <h1 class="font-bold text-2xl">Jul 28 2025 </h1>
+                    </div>
+                </div>
+
+            </div>
+
+
+         </div>
+
+         <!-- side ber section -->
+          <div class="w-[20%] bg-white min-h-screen rounded-xl">
+            <div class="text-center space-y-3 mt-5">
+                <div class="flex justify-center items-center text-2xl">
+                    <img src="assets/activity.png" alt="">
+                    <h1 class="font-bold mx-2">Activity Log</h1>
+                </div>
+                <button class="bg-blue-600 text-white py-2 px-4 rounded-xl">Clear History</button>
+            </div>
+          </div>
     </main>
 </body>
 </html>
