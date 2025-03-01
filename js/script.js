@@ -17,13 +17,18 @@ document.getElementById("discover").addEventListener("click", function(){
 })
 
 
-// show calender
+// show date
 
-const calender = document.getElementById("calender");
-calender.addEventListener("click", function(){
+const date = new Date();
+const month = ['january', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-})
+const monthName = month[date.getMonth()];
+const day = date.getDate();
+const year = date.getFullYear();
 
+const calender = document.getElementById("calender").innerHTML = `
+${monthName} ${day} ${year}
+`;
 
 
 // complete button functionality
@@ -33,7 +38,7 @@ const completeBtn = document.getElementsByClassName("complete-btn");
 for(let i = 0; i < completeBtn.length; i ++){
     const comBtn = completeBtn[i];
     comBtn.addEventListener('click', function(){
-        alert("board updated successfully")
+        alert("board updated successfully");
         comBtn.disabled = true;
         comBtn.style.backgroundColor = "gray"
         document.getElementsByClassName("complete-btn")
@@ -43,14 +48,21 @@ for(let i = 0; i < completeBtn.length; i ++){
         taskAssing.innerText = parseInt(taskAssing.innerText) -1;
         countComplete.innerText = parseInt(countComplete.innerText) + 1;
 
-        
+
         // activity set div
 
         const activityBtn = document.getElementById("activity");
+        const time = new Date().toLocaleTimeString();
+        const title = document.getElementsByClassName("title");
+        
+        for(let i = 0; i < title.length; i ++){
+            let mainTitle = title[i].innerText;
+            
+        }
         const div = document.createElement("div");
         div.classList.add("text-gray-500", "bg-slate-200", "rounded-xl", "p-2", "mt-2");
         div.innerHTML = `
-        <p>You have Complete The Task Add Dark Mode at 12:48:15 PM </p>
+        <p>You have Complete The Task Add Dark Mode at ${time} </p>
         `
         activityBtn.appendChild(div);
 
@@ -62,5 +74,12 @@ for(let i = 0; i < completeBtn.length; i ++){
             div.innerHTML = "";
             div.remove(div.classList)
         })
+
+        // completed
+        document.getElementById("completed").addEventListener("click", function(){
+            alert("congrates!!! You have completed all the current task");
+            return;
+        })
     })
+    
 }
