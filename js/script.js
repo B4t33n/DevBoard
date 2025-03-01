@@ -17,6 +17,14 @@ document.getElementById("discover").addEventListener("click", function(){
 })
 
 
+// show calender
+
+const calender = document.getElementById("calender");
+calender.addEventListener("click", function(){
+
+})
+
+
 
 // complete button functionality
 
@@ -25,6 +33,7 @@ const completeBtn = document.getElementsByClassName("complete-btn");
 for(let i = 0; i < completeBtn.length; i ++){
     const comBtn = completeBtn[i];
     comBtn.addEventListener('click', function(){
+        alert("board updated successfully")
         comBtn.disabled = true;
         comBtn.style.backgroundColor = "gray"
         document.getElementsByClassName("complete-btn")
@@ -45,7 +54,7 @@ for(let i = 0; i < completeBtn.length; i ++){
         `
         activityBtn.appendChild(div);
 
-        
+
         // activity-btn click to clear all history
 
         const activityButton = document.getElementById("activity-btn");
