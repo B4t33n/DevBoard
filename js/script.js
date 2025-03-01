@@ -17,8 +17,8 @@ const completeBtn = document.getElementsByClassName("complete-btn");
 for(let i = 0; i < completeBtn.length; i ++){
     const comBtn = completeBtn[i];
     comBtn.addEventListener('click', function(){
-        this.disabled = true;
-        this.style.backgroundColor = "gray"
+        comBtn.disabled = true;
+        comBtn.style.backgroundColor = "gray"
         document.getElementsByClassName("complete-btn")
         let taskAssing = document.getElementById("task-assing");
         let countComplete = document.getElementById("count-complete");
@@ -27,10 +27,6 @@ for(let i = 0; i < completeBtn.length; i ++){
         countComplete.innerText = parseInt(countComplete.innerText) + 1;
 
 
-
-
-
-        // button disabled
 
         
     })
