@@ -10,6 +10,14 @@ colorPiker.addEventListener('click', function(){
 
 })
 
+// question 
+
+document.getElementById("discover").addEventListener("click", function(){
+    window.location.href = "./question.html";
+})
+
+
+
 // complete button functionality
 
 const completeBtn = document.getElementsByClassName("complete-btn");
@@ -26,8 +34,24 @@ for(let i = 0; i < completeBtn.length; i ++){
         taskAssing.innerText = parseInt(taskAssing.innerText) -1;
         countComplete.innerText = parseInt(countComplete.innerText) + 1;
 
+        
+        // activity set div
 
+        const activityBtn = document.getElementById("activity");
+        const div = document.createElement("div");
+        div.classList.add("text-gray-500", "bg-slate-200", "rounded-xl", "p-2", "mt-2");
+        div.innerHTML = `
+        <p>You have Complete The Task Add Dark Mode at 12:48:15 PM </p>
+        `
+        activityBtn.appendChild(div);
 
         
+        // activity-btn click to clear all history
+
+        const activityButton = document.getElementById("activity-btn");
+        activityButton.addEventListener("click", function(){
+            div.innerHTML = "";
+            div.remove(div.classList)
+        })
     })
 }
