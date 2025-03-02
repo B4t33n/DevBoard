@@ -55,13 +55,15 @@ for(let i = 0; i < completeBtn.length; i ++){
 
         const activityBtn = document.getElementById("activity");
         const time = new Date().toLocaleTimeString();
-        console.log(event.target.parentNode.parentNode.parentNode);
+
+        const title = event.target.parentNode.parentNode.parentNode.querySelector(".title");
+        const titles = title.innerText;
 
         
         const div = document.createElement("div");
         div.classList.add("text-gray-500", "bg-slate-200", "rounded-xl", "p-2", "mt-2");
         div.innerHTML = `
-        <p>You have Complete The Task Add Dark Mode at ${time} </p>
+        <p>You have Complete The Task ${titles} Add Dark Mode at ${time} </p>
         `
         activityBtn.appendChild(div);
 
