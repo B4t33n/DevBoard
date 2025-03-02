@@ -20,7 +20,7 @@ document.getElementById("discover").addEventListener("click", function(){
 // show date
 
 const date = new Date();
-const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
+const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]; 
 const month = ['january', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 const monthName = month[date.getMonth()];
@@ -29,7 +29,7 @@ const day = date.getDate();
 const year = date.getFullYear();
 
 const calender = document.getElementById("calender").innerHTML = `
-${dayName} , ${monthName} ${day} ${year}
+    ${dayName} , <br> ${monthName} ${day} ${year}
 `;
 
 
@@ -42,13 +42,19 @@ for(let i = 0; i < completeBtn.length; i ++){
     comBtn.addEventListener('click', function(event){
         alert("board updated successfully");
         comBtn.disabled = true;
-        comBtn.style.backgroundColor = "gray"
+        comBtn.style.backgroundColor = "gray";
         document.getElementsByClassName("complete-btn")
         let taskAssing = document.getElementById("task-assing");
         let countComplete = document.getElementById("count-complete");
 
         taskAssing.innerText = parseInt(taskAssing.innerText) -1;
         countComplete.innerText = parseInt(countComplete.innerText) + 1;
+
+        document.getElementById("completed").addEventListener("click", function(event){
+            alert("congrates!!! You have completed all the current task");
+            
+        })
+
 
 
         // activity set div
@@ -77,10 +83,7 @@ for(let i = 0; i < completeBtn.length; i ++){
         })
 
         // completed
-        document.getElementById("completed").addEventListener("click", function(){
-            alert("congrates!!! You have completed all the current task");
-            return;
-        })
+       
     })
     
 }
