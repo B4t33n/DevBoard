@@ -20,14 +20,16 @@ document.getElementById("discover").addEventListener("click", function(){
 // show date
 
 const date = new Date();
+const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
 const month = ['january', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 const monthName = month[date.getMonth()];
+const dayName = days[date.getDay()];
 const day = date.getDate();
 const year = date.getFullYear();
 
 const calender = document.getElementById("calender").innerHTML = `
-${monthName} ${day} ${year}
+${dayName} , ${monthName} ${day} ${year}
 `;
 
 
@@ -37,7 +39,7 @@ const completeBtn = document.getElementsByClassName("complete-btn");
 
 for(let i = 0; i < completeBtn.length; i ++){
     const comBtn = completeBtn[i];
-    comBtn.addEventListener('click', function(){
+    comBtn.addEventListener('click', function(event){
         alert("board updated successfully");
         comBtn.disabled = true;
         comBtn.style.backgroundColor = "gray"
@@ -53,12 +55,9 @@ for(let i = 0; i < completeBtn.length; i ++){
 
         const activityBtn = document.getElementById("activity");
         const time = new Date().toLocaleTimeString();
-        const title = document.getElementsByClassName("title");
+        console.log(event.target.parentNode.parentNode.parentNode);
+
         
-        for(let i = 0; i < title.length; i ++){
-            let mainTitle = title[i].innerText;
-            
-        }
         const div = document.createElement("div");
         div.classList.add("text-gray-500", "bg-slate-200", "rounded-xl", "p-2", "mt-2");
         div.innerHTML = `
